@@ -35,7 +35,9 @@ export default class Orphanage {
 	open_on_weekends: boolean;
 
 	//Fazendo o relacionamento de Um-para-Muitos (Um orfanato, para muitas imagens):
-	@OneToMany(() => Image, (image) => image.orphanage)
+	@OneToMany(() => Image, (image) => image.orphanage, {
+		cascade: ["insert", "update"]
+	})
 	@JoinColumn({ name: "orphanage_id" })
 	images: Image[];
 }
