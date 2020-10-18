@@ -70,7 +70,7 @@ Happy is an application that was inspired by the children's day, with the aim of
 - Create a new **branch** for your feature: `git checkout -b my-feature`;
 - **Commit** your changes: `git commit -m 'feat: My new feature'`;
 - **Push** the changes into your branch: `git push origin my-feature`;
-- Create a **pull request** with your feature, and then **merge** it;
+- Create a **pull request** with your feature.
 
 > After the merge of your **pull request** is done, you can delete your branch.
 
