@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { getRepository } from "typeorm";
 import Orphanage from "../models/Orphanage";
+import orphanageView from "../views/orphanages_view";
 
 //Exportando o objeto OrphanagesController:
 export default {
@@ -8,8 +9,10 @@ export default {
 		//Declarando o repositório do tipo Orphanage:
 		const orphanagesRepository = getRepository(Orphanage);
 
-		//Declarando a constante orphanages que irá receber do método find() um array de entidades (orphanages):
-		const orphanages = await orphanagesRepository.find();
+		//Declarando a constante orphanages que irá receber do método find() um array de entidades (orphanages), e a relação com a entidade "images":
+		const orphanages = await orphanagesRepository.find({
+			relations: ["images"],
+		});
 
 		return response.json(orphanages);
 	},
@@ -18,11 +21,14 @@ export default {
 		//Recebendo o parâmetro id da rota (route param):
 		const { id } = request.params;
 
+		//Declarando o repositório do tipo Orphanage:
 		const orphanagesRepository = getRepository(Orphanage);
 
-		const orphanage = await orphanagesRepository.findOneOrFail(id);
-
-		return response.json(orphanage);
+		const orphanage = await orphanagesRepository.findOneOrFail(id, {
+			relations: ["images"],
+		});
+		
+		return response.json(orphanageView.render(orphanage));
 	},
 
 	async create(request: Request, response: Response) {
