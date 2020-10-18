@@ -12,6 +12,17 @@ export default {
 		return response.json(orphanages);
 	},
 
+	async show(request: Request, response: Response) {
+		//Recebendo o parâmetro id da rota (route param):
+		const { id } = request.params;
+
+		const orphanagesRepository = getRepository(Orphanage);
+
+		const orphanage = await orphanagesRepository.findOneOrFail(id);
+
+		return response.json(orphanage);
+	},
+
 	async create(request: Request, response: Response) {
 		//Desestruturando o corpo da requisição:
 		const {
@@ -23,7 +34,7 @@ export default {
 			opening_hours,
 			open_on_weekends,
 		} = request.body;
-      
+
 		const orphanagesRepository = getRepository(Orphanage);
 
 		const orphanage = orphanagesRepository.create({
