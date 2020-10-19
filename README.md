@@ -12,7 +12,7 @@
   </a>
   <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/mathrb22/Happy">
   <img alt="GitHub Repo Size" src="https://img.shields.io/github/repo-size/mathrb22/Happy">
-  <a href="https://github.com/mathrb22/SemanaOmnistack11/commits/master">
+  <a href="https://github.com/mathrb22/Happy/commits/master">
     <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/mathrb22/Happy">
   </a>
   <img alt="GitHub Issues" src="https://img.shields.io/github/issues/mathrb22/Happy">
@@ -72,7 +72,7 @@ Happy is an application that was inspired by the children's day, with the aim of
 - **Push** the changes into your branch: `git push origin my-feature`;
 - Create a **pull request** with your feature.
 
-> After the merge of your **pull request** is done, you can delete your branch.
+> If your **pull request** has been approved and merged, you can delete your branch.
 
 **PS**: If you have any questions or suggestions, create a _**issue**_ or contact me.
 
